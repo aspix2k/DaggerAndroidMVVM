@@ -1,10 +1,13 @@
 # DaggerAndroidMVVM
 
-[![Build Status](https://travis-ci.org/jshvarts/DaggerAndroidMVVM.svg?branch=master)](https://travis-ci.org/jshvarts/DaggerAndroidMVVM)
+This is fork of [this project](https://github.com/jshvarts/DaggerAndroidMVVM).
 
-Basic app that demonstrates using Dagger Android 2.10+ in MVVM app that follows Clean Architecture, RxJava
-
-The source code in this repo accompanies my article https://proandroiddev.com/mvvm-architecture-using-livedata-rxjava-and-new-dagger-android-injection-639837b1eb6c
+Changes:
+- Kotlin-based
+- Updated dependencies
+- Migrated to AndroidX
+- Added delays to Repos' responses
+- Code cleanup
 
 ## License
 
