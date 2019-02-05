@@ -29,7 +29,7 @@ class LobbyActivity : AppCompatActivity() {
     @BindView(R.id.loading_indicator)
     lateinit var loadingIndicator: ProgressBar
 
-    private var viewModel: LobbyViewModel? = null
+    private lateinit var viewModel: LobbyViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -40,25 +40,23 @@ class LobbyActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this, viewModelFactory).get(LobbyViewModel::class.java)
 
-        viewModel!!.response().observe(this, Observer<Response> { processResponse(it) })
+        viewModel.response().observe(this, Observer<Response> { processResponse(it) })
     }
 
     @OnClick(R.id.common_greeting_button)
     fun onCommonGreetingButtonClicked() {
-        viewModel!!.loadCommonGreeting()
+        viewModel.loadCommonGreeting()
     }
 
     @OnClick(R.id.lobby_greeting_button)
     fun onLobbyGreetingButtonClicked() {
-        viewModel!!.loadLobbyGreeting()
+        viewModel.loadLobbyGreeting()
     }
 
     private fun processResponse(response: Response) {
         when (response.status) {
             Status.LOADING -> renderLoadingState()
-
             Status.SUCCESS -> renderDataState(response.data)
-
             Status.ERROR -> renderErrorState(response.error)
         }
     }

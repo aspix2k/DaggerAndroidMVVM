@@ -8,9 +8,11 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    /* Use AndroidInjectionModule.class if you're not using support library */
-    AndroidSupportInjectionModule::class, AppModule::class, BuildersModule::class])
+    AndroidSupportInjectionModule::class, /* Use AndroidInjectionModule.class if you're not using support library */
+    AppModule::class,
+    BuildersModule::class])
 interface AppComponent {
+
     fun inject(app: App)
 
     @Component.Builder

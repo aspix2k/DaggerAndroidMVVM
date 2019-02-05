@@ -10,6 +10,7 @@ import javax.inject.Singleton
 /**
  * This is where you will inject application-wide dependencies.
  */
+
 @Module
 class AppModule {
 

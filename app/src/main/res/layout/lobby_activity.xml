@@ -1,50 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:orientation="vertical"
-	tools:context="com.example.daggerandroidmvvm.lobby.LobbyActivity">
+	android:layout_height="match_parent">
 
-	<LinearLayout
-		android:layout_width="match_parent"
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/common_greeting_button"
+		android:layout_width="0dp"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="30dp"
-		android:gravity="center_horizontal"
-		android:orientation="horizontal">
+		android:layout_marginStart="24dp"
+		android:layout_marginTop="24dp"
+		android:layout_marginEnd="24dp"
+		android:text="@string/common_greeting"
+		app:layout_constraintEnd_toStartOf="@+id/lobby_greeting_button"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_chainStyle="packed"/>
 
-		<Button
-			android:id="@+id/common_greeting_button"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="Common Greeting"/>
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/lobby_greeting_button"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="24dp"
+		android:layout_marginEnd="24dp"
+		android:text="@string/lobby_greeting"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.5"
+		app:layout_constraintStart_toEndOf="@+id/common_greeting_button"
+		app:layout_constraintTop_toTopOf="parent"/>
 
-		<Button
-			android:id="@+id/lobby_greeting_button"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="Lobby Greeting"/>
-	</LinearLayout>
+	<ProgressBar
+		android:id="@+id/loading_indicator"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginStart="8dp"
+		android:layout_marginTop="8dp"
+		android:layout_marginEnd="8dp"
+		android:layout_marginBottom="8dp"
+		android:visibility="gone"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:visibility="visible"/>
 
-	<FrameLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/greeting_textview"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginStart="24dp"
+		android:layout_marginTop="24dp"
+		android:layout_marginEnd="24dp"
+		android:gravity="center"
+		android:textSize="18sp"
+		android:visibility="gone"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/common_greeting_button"
+		tools:text="Sample text"
+		tools:visibility="visible"/>
 
-		<ProgressBar
-			android:id="@+id/loading_indicator"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"
-			android:visibility="gone"/>
-
-		<TextView
-			android:id="@+id/greeting_textview"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"
-			android:layout_marginTop="30dp"/>
-
-	</FrameLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

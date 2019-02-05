@@ -6,6 +6,7 @@ import com.example.daggerandroidmvvm.common.viewmodel.Status.*
  * Response holder provided to the UI
  */
 class Response private constructor(val status: Status, val data: String?, val error: Throwable?) {
+
     companion object {
 
         fun loading(): Response {

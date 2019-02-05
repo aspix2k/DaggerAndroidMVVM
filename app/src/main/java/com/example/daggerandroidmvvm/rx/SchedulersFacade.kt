@@ -9,8 +9,8 @@ import javax.inject.Inject
  * Provides various threading schedulers.
  */
 
-class SchedulersFacade @Inject
-constructor() {
+class SchedulersFacade
+@Inject constructor() {
 
     /**
      * IO thread pool scheduler

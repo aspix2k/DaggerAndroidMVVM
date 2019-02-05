@@ -9,6 +9,7 @@ import dagger.android.ContributesAndroidInjector
 /**
  * Binds all sub-components within the app.
  */
+
 @Module
 abstract class BuildersModule {
 
